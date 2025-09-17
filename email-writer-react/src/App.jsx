@@ -1,3 +1,6 @@
+// top of file
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080";
+
 import { useState } from "react";
 import "./App.css";
 import {
@@ -26,10 +29,10 @@ function App() {
     setLoading(true);
     setError("");
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/email/generate",
-        { emailContent, tone }
-      );
+      const response = await axios.post(`${API_BASE}/api/email/generate`, {
+        emailContent,
+        tone,
+      });
       setGeneratedReply(
         typeof response.data === "string"
           ? response.data
