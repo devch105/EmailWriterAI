@@ -1,5 +1,5 @@
 // top of file
-const API_BASE = "https://quickmailv1.onrender.com";
+const API_BASE = "https://emailwriterai.onrender.com";
 
 import { useState } from "react";
 import "./App.css";
